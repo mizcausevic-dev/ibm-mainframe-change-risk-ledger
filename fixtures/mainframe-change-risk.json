@@ -1,0 +1,45 @@
+{
+  "asOf": "2026-06-06T13:30:00Z",
+  "estate": "IBM z/OS batch, COBOL copybook, JCL, DB2, rollback, and release-readiness lanes",
+  "lanes": [
+    {
+      "laneId": "claims-core-settlement",
+      "system": "Claims core settlement",
+      "criticalApplications": 18,
+      "compressedBatchWindows": 5,
+      "untestedCopybookChanges": 7,
+      "abendRatePercent": 8,
+      "staleJclJobs": 4,
+      "db2ChangeCount": 6,
+      "rollbackDrillAgeDays": 60,
+      "owner": "Mainframe delivery",
+      "nextAction": "Freeze nonessential copybook drift and rehearse rollback for settlement-impacting jobs before the next release window."
+    },
+    {
+      "laneId": "deposit-ledger-close",
+      "system": "Deposit ledger close",
+      "criticalApplications": 12,
+      "compressedBatchWindows": 2,
+      "untestedCopybookChanges": 3,
+      "abendRatePercent": 3,
+      "staleJclJobs": 2,
+      "db2ChangeCount": 3,
+      "rollbackDrillAgeDays": 30,
+      "owner": "Core banking operations",
+      "nextAction": "Reduce stale JCL and attach DB2 migration evidence to the close packet."
+    },
+    {
+      "laneId": "card-dispute-batch",
+      "system": "Card dispute batch",
+      "criticalApplications": 7,
+      "compressedBatchWindows": 1,
+      "untestedCopybookChanges": 1,
+      "abendRatePercent": 1,
+      "staleJclJobs": 0,
+      "db2ChangeCount": 2,
+      "rollbackDrillAgeDays": 14,
+      "owner": "Payments platform",
+      "nextAction": "Keep dispute-batch change evidence attached to the monthly resilience packet."
+    }
+  ]
+}
